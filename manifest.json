@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "LeetCode → GitHub",
-  "version": "1.0",
+  "name": "LeetCode GitHub Sync",
+  "version": "2.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
   "permissions": ["storage"],
-  "host_permissions": ["https://api.github.com/*", "https://leetcode.com/*"],
-  "action": { "default_popup": "popup.html" },
-  "content_scripts": [
-    {
-      "matches": ["https://leetcode.com/problems/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ]
+  "host_permissions": ["https://leetcode.com/*", "https://api.github.com/*"],
+  "content_scripts": [{
+    "matches": ["https://leetcode.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }]
 }

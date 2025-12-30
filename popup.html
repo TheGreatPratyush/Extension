@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>LeetCode → GitHub</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+  <h2>LeetCode Sync</h2>
+  
+  <section>
+    <h3>Detected</h3>
+    <p><strong>Problem:</strong> <span id="problemName">-</span></p>
+    <p><strong>Language:</strong> <span id="language">-</span></p>
+  </section>
 
-  <div class="popup">
-    <h1>LeetCode → GitHub</h1>
-    <p class="subtitle">Sync daily LeetCode solves</p>
+  <section>
+    <h3>GitHub</h3>
+    <input type="password" id="tokenInput" placeholder="ghp_xxx...">
+    <input type="text" id="usernameInput" placeholder="username">
+    <input type="text" id="repoInput" placeholder="repo-name">
+    <button id="saveBtn">Save</button>
+    <p id="status"></p>
+  </section>
 
-    <div class="status">
-      <span class="dot"></span>
-      <span class="status-text">Loading...</span>
-    </div>
-
-    <div class="preview">
-      <p><strong>Problem:</strong> <span id="problem">—</span></p>
-      <p><strong>Language:</strong> <span id="language">—</span></p>
-      <p><strong>Status:</strong> <span id="sync-status">Not synced</span></p>
-    </div>
-
-    <hr />
-
-    <input
-      type="password"
-      id="github-token"
-      placeholder="GitHub Personal Access Token"
-    />
-
-    <button id="save-token-btn">Save Token</button>
-    <button id="sync-btn">Sync to GitHub</button>
-  </div>
+  <button id="syncBtn">Sync to GitHub</button>
+  <p id="syncStatus"></p>
 
   <script src="popup.js"></script>
 </body>
